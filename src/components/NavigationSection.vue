@@ -38,11 +38,10 @@
           Properties
         </li>
       </ul>
-    </nav>
-
-    <button class="btn-mobile">
+      <button>
       Contact Us
     </button>
+    </nav>
   </section>
 </template>
 
@@ -90,15 +89,11 @@ const toggleMobileMenu = () => {
     display: none;
   }
 
-  .btn-mobile {
-    display: none;
-  }
-
   @media (max-width: 850px) {
     .nav {
-      display: flex;
+      display: grid;
+      grid-template-columns: repeat(2, 0.45fr);
       padding: 1.2rem 2rem;
-      justify-content: space-between;
     }
 
     .desktop-nav {
@@ -129,6 +124,7 @@ const toggleMobileMenu = () => {
 
     .mobile-nav {
       display: flex;
+      flex-direction: column;
     }
 
     .mobile-nav ul {
