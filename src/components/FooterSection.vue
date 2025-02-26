@@ -2,9 +2,7 @@
   <section class="footer">
     <span></span>
     <footer>
-      <h2>
-        Logo
-      </h2>
+      <img src="/canonical_logo.png" alt="Logo" />
       <p>
         &copy {{ year }}/ Canonical Realty. All Rights Reserved.
       </p>
@@ -20,17 +18,19 @@ year.value = new Date().getFullYear();
 </script>
 
 <style scoped>
-  .footer {
-    background-color: #000;
-  }
   footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
 
-  h2, p {
-    color: #edf5e1;
+  p {
+    color: #2db42d;
+  }
+
+  img {
+    height: 3rem;
+    width: auto;
   }
 
   @media (max-width: 850px) {

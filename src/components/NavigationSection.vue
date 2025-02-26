@@ -1,9 +1,10 @@
 <template>
   <section class="nav">
     <nav class="desktop-nav" v-show="!mobileMenuVisible">
-      <h1>
+      <!-- <h1>
         Logo
-      </h1>
+      </h1> -->
+      <img src="/canonical_logo.png" alt="Logo" />
       <ul>
         <li>
           About Us
@@ -14,10 +15,10 @@
         <li>
           Properties
         </li>
+        <button>
+          Contact Us
+        </button>
       </ul>
-      <button>
-        Contact Us
-      </button>
     </nav>
   
     <div class="mobile-toggle" @click="toggleMobileMenu">
@@ -37,10 +38,10 @@
         <li>
           Properties
         </li>
+        <button>
+          Contact Us
+        </button>
       </ul>
-      <button>
-      Contact Us
-    </button>
     </nav>
   </section>
 </template>
@@ -62,9 +63,11 @@ const toggleMobileMenu = () => {
   .nav {
   /* padding-top: 1rem;
     padding-bottom: 1rem; */
-    padding: 1.2rem 4rem;
+    padding: 1rem 2rem;
     /* background-color: #65ccb8; */
-    background-color: #98ff98;
+    /* background-color: #98ff98; */
+    color: #082108;
+    border-bottom: 1px solid #daf6da;
   }
   .desktop-nav {
     display: flex;
@@ -73,20 +76,31 @@ const toggleMobileMenu = () => {
   }
 
   ul {
-    min-width: 50%;
     display: flex;
-    justify-content: space-around;
+    align-items: center;
+    gap: 2rem;
     list-style: none;
-    color: #4682b4;
     font-weight: bold;
+    
+    button {
+      background-color: #98ff98;
+      border-radius: 1rem;
+      color: #082108;
+      font-weight: bold;
+    }
   }
 
   h1 {
-    color: #4682b4;
+    color: #082108;
   }
 
   .mobile-nav {
     display: none;
+  }
+
+  img {
+    height: 4rem;
+    width: auto;
   }
 
   @media (max-width: 850px) {

@@ -1,11 +1,20 @@
 <template>
   <section class="services">
-    <h1>
-      Discover the Value of Your Property with our Expert Valuation Services
-    </h1>
+    <div class="services-header">
+      <h2>
+        Discover the Value of Your Property with our Expert Valuation Services
+      </h2>
+
+      <p>
+        We offer a wide range of services to meet your property needs;
+        from valuations to market analysis.
+      </p>
+    </div>
+
     <div class="all-services">
       <article>
-        <img src="/chart-line-1-svgrepo-com.svg">
+        <!-- <img src="/chart-line-1-svgrepo-com.svg"> -->
+        <img src="/pie-chart.png">
         <h2>
           Stay Ahead of the Market with our Comprehensive Market Analysis
         </h2>
@@ -15,7 +24,8 @@
         <!-- <button class="btn-white">Learn More ></button> -->
       </article>
       <article>
-        <img src="/investment-insurance-svgrepo-com.svg">
+        <!-- <img src="/investment-insurance-svgrepo-com.svg"> -->
+        <img src="/coin.png">
         <h2>
           Unlock Lucrative Investment Opportunities with our Expert Guidance
         </h2>
@@ -25,7 +35,9 @@
         <!-- <button class="btn-white">Sign up ></button> -->
       </article>
       <article>
-        <img src="/real-estate-house-key-svgrepo-com.svg">
+        <!-- <img src="/real-estate-house-key-svgrepo-com.svg"> -->
+        <img src="/caret_circle_right.png">
+
         <h2>
           Maximize Your Property's Potential with our Professional Services
         </h2>
@@ -34,7 +46,7 @@
         </p>
       </article>
     </div>
-    <button class="button">Contact us ></button>
+    <!-- <button class="button">Contact us ></button> -->
   </section>
 </template>
 
@@ -47,11 +59,27 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    background-color: #65ccb8;
+    /* align-items: center; */
+    /* background-color: #65ccb8;
     background-color: #00ff7f;
     background-color: #32cd32;
-    background-color: #98ff98;
+    background-color: #98ff98; */
+  }
+
+  .services-header {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    max-width: 70%;
+    margin-bottom: 1rem;
+    h2 {
+      margin-bottom: 1rem;
+      /* color: #5cdb95; */
+      /* color: #edf5e1; */
+      color: #082108;
+      font-weight: bold;
+      font-size: 2rem;
+    }
   }
 
   .all-services {
@@ -59,31 +87,38 @@
     grid-template-columns: repeat(3, 1fr);
     column-gap: 2.5rem;
     margin-bottom: 2rem;
+
+    article {
+      /* background-color: #effbef; */
+      border: 1px solid #c2f0c2;
+      border-radius: 0.5rem;
+      padding: 1rem;
+
+      h2 {
+        color: #082108;
+        font-size: 1rem;
+        line-height: 1.5rem;
+      }
+
+      p {
+        color: #2db42d;
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+      }
+    }
   }
 
-  h1 {
-    max-width: 30rem;
-    margin-bottom: 3rem;
-    text-align: center;
-    /* color: #5cdb95; */
-    /* color: #edf5e1; */
-  }
 
   article {
     max-width: 1fr;
   }
+
   img {
-    width: 100%;
-    height: 10rem;
+    height: 3rem;
+    width: auto;
     padding-bottom: 2rem;
   }
-  h1, h2 {
-    color: #4682b4;
-  }
 
-  p {
-    color: #36454f;
-  }
   h2, p {
     margin-bottom: 1rem;
   }

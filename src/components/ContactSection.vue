@@ -1,6 +1,6 @@
 <template>
   <section class="contact">
-    <article>
+    <article class="header">
       <h1>
         Get in Touch
       </h1>
@@ -8,12 +8,12 @@
         We are here to answer any questions you may have. Contact us today!
       </p>
     </article>
-    <article class="mobi">
-      <div>
+    <article class="comms">
+      <div class="email">
         <h3>Email</h3>
         <a>hello@canonicalrealty.com</a>
       </div>
-      <div>
+      <div class="phone">
         <h3>Phone</h3>
         <a>+254711394893</a>
       </div>
@@ -30,15 +30,38 @@
 
 <style scoped>
   .contact {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 1rem;
-    background-color: #000;
-  }
+    display: flex;
+    flex-direction: column;
+    /* grid-template-columns: repeat(2, 1fr);
+    column-gap: 1rem; */
+    /* background-color: #000; */
+    .header {
+      text-align: center;
+      padding-bottom: 1.5rem;
 
-  h1, h3 {
-    /* color: #65ccb8; */
-    color: #98ff98;
+      h1 {
+        font-size: 2rem;
+      }
+    }
+
+    .comms {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+
+      .email, .phone {
+        display: flex;
+        flex-direction: column;
+
+        h3 {
+          text-align: center;
+        }
+
+        a {
+          color: #2db42d;
+        }
+      }
+    }
   }
 
   div {
@@ -59,16 +82,16 @@
       text-align: center;
       padding-bottom: 1.5rem;
     }
-    .mobi {
+    .comms {
       display: grid;
       grid-template-columns: repeat(2, 0.5fr);
     }
 
-    .mobi div h3 {
+    .comms div h3 {
       font-size: 16px;
     }
 
-    .mobi div a {
+    .comms div a {
       font-size: 13px;
     }
   }
