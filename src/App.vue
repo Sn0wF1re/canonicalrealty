@@ -1,22 +1,24 @@
-<script setup>
-import NavigationSection from './components/NavigationSection.vue'
-import HeroSection from './components/HeroSection.vue'
-import ServicesSection from './components/ServicesSection.vue'
-import ContactSection from './components/ContactSection.vue'
-import FooterSection from './components/FooterSection.vue'
-</script>
-
 <template>
   <div>
     <NavigationSection />
     <HeroSection />
     <ServicesSection />
+    <CTASection />
     <ContactSection />
     <FooterSection />
   </div>
 </template>
 
-<style>
+<script setup>
+import NavigationSection from './components/NavigationSection.vue'
+import HeroSection from './components/HeroSection.vue'
+import ServicesSection from './components/ServicesSection.vue'
+import CTASection from './components/CTASection.vue'
+import ContactSection from './components/ContactSection.vue'
+import FooterSection from './components/FooterSection.vue'
+</script>
+
+<!-- <style>
   * {
     margin: 0;
     padding: 0;
@@ -77,4 +79,4 @@ import FooterSection from './components/FooterSection.vue'
     padding: 3rem 2rem;
   }
   }
-</style>
+</style> -->

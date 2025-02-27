@@ -1,70 +1,65 @@
 <template>
   <section class="hero">
-    <article>
-      <h2>
-        Welcome to Canonical Realty
-      </h2>
+    <div class="overlay"></div>
+    <div class="container">
+      <h1>
+        Maximize Your Property's Value with Canonical Realty - Your Trusted Experts in Valuation, Management & Sales.
+      </h1>
       <p>
-        Your Trusted Valuation, Property Management, and Estate Agency.
-        We provide accurate and reliable property valuation services to help you make informed decisions.
+        Find out how much your property is worth today with our expert valuation services. Buy, sell, or manage properties effortlessly with our trusted guidance.
       </p>
-    </article>
-    <div class="buttons">
-      <button class="btn-lime">
-        Get Started
-      </button>
-      <button class="btn-white">
-        Learn More
-      </button>
+      <div class="buttons">
+        <a href="#" class="btn btn-primary">Get Started</a>
+        <a href="#" class="btn btn-secondary">Learn More</a>
+      </div>
     </div>
   </section>
 </template>
 
-<script setup>
-
-</script>
-
 <style scoped>
-  .hero {
-    /* background-color: #65ccb8; */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-image: url('/moretowers.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    border-radius: 0.5rem;
+.hero {
+  background: url('/moretowers.jpg') center/cover no-repeat;
+  height: 80vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+.hero .overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(46, 139, 87, 0.1), rgba(46, 139, 87, 0.1)), rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+}
+
+h1, p {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.btn-primary {
+  background: #2E8B57;
+  color: white;
+}
+
+.btn-secondary {
+  background: white;
+  color: #2E8B57;
+}
+
+@media (max-width: 768px) {
+  .hero, .overlay {
+    border-radius: 0;
   }
-
-  article {
-    padding-top: 12.6rem;
-    text-align: center;
-
-    h2 {
-      font-size: 2.25rem;
-      line-height: 2.5rem;
-    }
-
-    p {
-      font-size: 0.875rem;
-      line-height: 1.25rem;
-    }
-
-    h2, p {
-      color: #edf5e1;
-      margin-bottom: 1rem;
-    }
-  }
-  
-
-  .buttons {
-    display: grid;
-    grid-template-columns: repeat(2, 6rem);
-    gap: 1rem;
-
-    .btn-lime {
-      background-color: #98ff98;
-    }
-  }
+}
 </style>

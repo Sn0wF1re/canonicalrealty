@@ -1,158 +1,68 @@
 <template>
-  <section class="nav">
-    <nav class="desktop-nav" v-show="!mobileMenuVisible">
-      <!-- <h1>
-        Logo
-      </h1> -->
-      <img src="/canonical_logo.png" alt="Logo" />
-      <ul>
-        <li>
-          About Us
-        </li>
-        <li>
-          Services
-        </li>
-        <li>
-          Properties
-        </li>
-        <button>
-          Contact Us
-        </button>
-      </ul>
-    </nav>
-  
-    <div class="mobile-toggle" @click="toggleMobileMenu">
-      <span class="line"></span>
-      <span class="line"></span>
-      <span class="line"></span>
+  <header class="navbar">
+    <div class="container">
+      <div class="logo">
+        <img src="/canonical_logo.png" alt="Canonical Realty Logo">
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Properties</a></li>
+        </ul>
+        <a href="#" class="btn btn-primary">Contact Us</a>
+      </nav>
     </div>
-  
-    <nav class="mobile-nav" v-show="mobileMenuVisible">
-      <ul>
-        <li>
-          About Us
-        </li>
-        <li>
-          Services
-        </li>
-        <li>
-          Properties
-        </li>
-        <button>
-          Contact Us
-        </button>
-      </ul>
-    </nav>
-  </section>
+  </header>
 </template>
 
-<script setup>
-import { ref } from 'vue';
-
-const mobileMenuVisible = ref(false);
-
-const toggleMobileMenu = () => {
-  mobileMenuVisible.value = !mobileMenuVisible.value;
-  // set class
-  const mobileToggle = document.querySelector('.mobile-toggle');
-  mobileToggle.classList.toggle('mobile-toggle-active');
-};
-</script>
-
 <style scoped>
-  .nav {
-  /* padding-top: 1rem;
-    padding-bottom: 1rem; */
-    padding: 1rem 2rem;
-    /* background-color: #65ccb8; */
-    /* background-color: #98ff98; */
-    color: #082108;
-    border-bottom: 1px solid #daf6da;
-  }
-  .desktop-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+.container {
+  background: #FFFFFF;
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-  ul {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    list-style: none;
-    font-weight: bold;
-    
-    button {
-      background-color: #98ff98;
-      border-radius: 1rem;
-      color: #082108;
-      font-weight: bold;
-    }
-  }
+.container .logo img {
+  height: 3rem;
+  width: auto;
+  font-size: 24px;
+  font-weight: bold;
+  color: #2E8B57;
+}
 
-  h1 {
-    color: #082108;
-  }
+.container nav {
+  display: flex;
+  align-items: center;
+}
 
-  .mobile-nav {
+.container nav ul {
+  list-style: none;
+  display: flex;
+}
+
+.container nav ul li {
+  margin-right: 20px;
+}
+
+.container nav ul li a {
+  text-decoration: none;
+  color: #333;
+}
+
+.btn-primary {
+  background: #2E8B57;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .navbar {
     display: none;
   }
-
-  img {
-    height: 4rem;
-    width: auto;
-  }
-
-  @media (max-width: 850px) {
-    .nav {
-      display: grid;
-      grid-template-columns: repeat(2, 0.45fr);
-      padding: 1.2rem 2rem;
-    }
-
-    .desktop-nav {
-      display: none;
-    }
-
-    .line {
-      width: 30px;
-      height: 3px;
-      background: #4682b4;
-      margin: 6px 0;
-      transition: transform 0.2s, opacity 0.2s;
-    }
-
-    /* Mobile navigation menu styles */
-
-    .mobile-toggle-active .line:nth-child(1) {
-      transform: rotate(-45deg) translate(-9px, 12px);
-    }
-
-    .mobile-toggle-active .line:nth-child(2) {
-      opacity: 0;
-    }
-
-    .mobile-toggle-active .line:nth-child(3) {
-      transform: rotate(45deg) translate(-9px, -12px);
-    }
-
-    .mobile-nav {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .mobile-nav ul {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .mobile-nav ul li {
-      padding-bottom: 0.25rem;
-    }
-    .mobile-toggle {
-      display: flex;
-      flex-direction: column;
-      cursor: pointer;
-    }
-  }
+}
 </style>
