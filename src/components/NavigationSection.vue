@@ -10,7 +10,7 @@
           <li><a href="#">Services</a></li>
           <li><a href="#">Properties</a></li>
         </ul>
-        <a href="#" class="btn btn-primary">Contact Us</a>
+        <a href="#contact-us" class="btn btn-primary">Contact Us</a>
       </nav>
     </div>
   </header>
@@ -53,8 +53,10 @@
 }
 
 .btn-primary {
-  background: #2E8B57;
-  color: white;
+  /* background: #2E8B57; */
+  background: #98FF98;
+  /* color: white; */
+  color: black;
   padding: 10px 20px;
   border-radius: 5px;
   text-decoration: none;

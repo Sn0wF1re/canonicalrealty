@@ -2,7 +2,7 @@
     <section class="cta">
       <div class="container">
         <h2>Need a valuation or real estate advice?</h2>
-        <a href="#" class="btn btn-primary">Speak with Our Experts Today!</a>
+        <a href="#contact-us" class="btn btn-primary">Speak with Our Experts Today!</a>
       </div>
     </section>
   </template>
@@ -15,8 +15,10 @@
   }
   
   .btn-primary {
-    background: #2E8B57;
-    color: white;
+    /* background: #2E8B57;
+    color: white; */
+    background: #98FF98;
+    color: black;
   }
   </style>
   

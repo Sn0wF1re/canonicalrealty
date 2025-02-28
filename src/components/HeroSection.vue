@@ -48,13 +48,17 @@ h1, p {
 }
 
 .btn-primary {
-  background: #2E8B57;
-  color: white;
+  /* background: #2E8B57; */
+  background: #98FF98;
+  /* color: white; */
+  color: black;
 }
 
 .btn-secondary {
   background: white;
-  color: #2E8B57;
+  /* background: black; */
+  /* color: #2E8B57; */
+  color: black;
 }
 
 @media (max-width: 768px) {

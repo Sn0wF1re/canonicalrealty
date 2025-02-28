@@ -1,22 +1,30 @@
 <template>
-  <section class="contact">
+  <section class="contact" id="contact-us">
     <div class="container">
       <!-- <h2>Get in Touch</h2> -->
       <div class="contact-grid">
-        <form>
+        <form @submit.prevent="submitEmail">
           <input type="text" autocomplete="on" id="name" placeholder="Your Name" required>
           <input type="email" autocomplete="on" id="email" placeholder="Your Email" required>
           <textarea id="message" placeholder="Your Message" required></textarea>
           <button type="submit" class="btn btn-primary">Send Message</button>
         </form>
         <div class="contact-info">
-          <p>Email: <a href="mailto:hello@canonicalrealty.com">hello@canonicalrealty.com</a></p>
-          <p>Phone: +254 711 394 893</p>
+          <p>Email: <a href="mailto:info.realtyltd@yahoo.com">info.realtyltd@yahoo.com</a></p>
+          <p>Phone: +254 711 321 456</p>
         </div>
       </div>
     </div>
   </section>
 </template>
+
+<script setup>
+const submitEmail = () => {
+  const name = document.getElementById('name').value;
+  const email = document.getElementById('email').value;
+  const message = document.getElementById('message').value;
+}
+</script>
 
 <style scoped>
 .contact {
@@ -53,8 +61,10 @@ textarea {
 }
 
 .btn-primary {
-  background: #2E8B57;
-  color: white;
+  /* background: #2E8B57; */
+  background: #98FF98;
+  /* color: white; */
+  color: black;
   border: none;
 }
 
