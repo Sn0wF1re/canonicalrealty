@@ -1,5 +1,5 @@
 <template>
-  <section class="hero">
+  <section id="hero" class="hero">
     <div class="overlay"></div>
     <div class="container">
       <h1>
@@ -9,8 +9,8 @@
         Find out how much your property is worth today with our expert valuation services. Buy, sell, or manage properties effortlessly with our trusted guidance.
       </p>
       <div class="buttons">
-        <a href="#" class="btn btn-primary">Get Started</a>
-        <a href="#" class="btn btn-secondary">Learn More</a>
+        <a href="#contact-us" class="btn btn-primary">Get Started</a>
+        <a href="#services" class="btn btn-secondary">Learn More</a>
       </div>
     </div>
   </section>
@@ -34,6 +34,14 @@
   height: 100%;
   background: linear-gradient(rgba(46, 139, 87, 0.1), rgba(46, 139, 87, 0.1)), rgba(0, 0, 0, 0.1);
   border-radius: 0.5rem;
+}
+
+.overlay {
+  z-index: 1;
+}
+
+.container {
+  z-index: 2;
 }
 
 h1, p {
