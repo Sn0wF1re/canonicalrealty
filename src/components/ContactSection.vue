@@ -3,12 +3,22 @@
     <div class="container">
       <!-- <h2>Get in Touch</h2> -->
       <div class="contact-grid">
-        <form @submit.prevent="submitEmail">
+        <form @submit.prevent="sendEmail">
           <input type="text" autocomplete="on" id="name" placeholder="Your Name" required>
+          <span v-if="errors.name" class="error">{{ errors.name }}</span>
+
           <input type="email" autocomplete="on" id="email" placeholder="Your Email" required>
+          <span v-if="errors.email" class="error">{{ errors.email }}</span>
+
           <textarea id="message" placeholder="Your Message" required></textarea>
-          <button type="submit" class="btn btn-primary">Send Message</button>
+          <span v-if="errors.message" class="error">{{ errors.message }}</span>
+
+          <button :disabled="loading" type="submit" class="btn btn-primary">Send Message</button>
         </form>
+
+        <!-- Success Message -->
+        <p v-if="successMessage" class="success">{{ successMessage }}</p>
+
         <div class="contact-info">
           <p>Email: <a href="mailto:info.realtyltd@yahoo.com">info.realtyltd@yahoo.com</a></p>
           <p>Phone: +254 711 321 456</p>
@@ -19,11 +29,72 @@
 </template>
 
 <script setup>
-const submitEmail = () => {
-  const name = document.getElementById('name').value;
-  const email = document.getElementById('email').value;
-  const message = document.getElementById('message').value;
-}
+import { ref } from "vue";
+import emailjs from "@emailjs/browser";
+
+const name = ref("");
+const email = ref("");
+const message = ref("");
+const errors = ref({});
+const successMessage = ref("");
+const loading = ref(false);
+
+const validateForm = () => {
+  errors.value = {};
+  let isValid = true;
+
+  if (!name.value) {
+    errors.value.name = "Name is required.";
+    isValid = false;
+  }
+  if (!email.value) {
+    errors.value.email = "Email is required.";
+    isValid = false;
+  } else if (!/\S+@\S+\.\S+/.test(email.value)) {
+    errors.value.email = "Invalid email format.";
+    isValid = false;
+  }
+  if (!message.value) {
+    errors.value.message = "Message cannot be empty.";
+    isValid = false;
+  }
+
+  return isValid;
+};
+
+const sendEmail = async () => {
+  if (!validateForm()) return;
+
+  loading.value = true;
+
+  const templateParams = {
+    name: name.value,
+    email: email.value,
+    message: message.value,
+  };
+
+  try {
+    await emailjs.send(
+      "YOUR_SERVICE_ID",
+      "YOUR_TEMPLATE_ID",
+      templateParams,
+      "YOUR_USER_ID"
+    );
+
+    successMessage.value = "Your message has been sent successfully!";
+    setTimeout(() => {
+      successMessage.value = "";
+    }, 3000);
+
+    name.value = "";
+    email.value = "";
+    message.value = "";
+  } catch (error) {
+    console.error("Failed to send email:", error);
+  } finally {
+    loading.value = false;
+  }
+};
 </script>
 
 <style scoped>
@@ -58,6 +129,22 @@ input, textarea {
 textarea {
   height: 150px;
   resize: none;
+}
+
+.error {
+  color: red;
+  font-size: 0.9rem;
+}
+
+.success {
+  color: green;
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+button[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
 .btn-primary {
