@@ -6,9 +6,9 @@
       </div>
       <nav>
         <ul>
-          <li><a href="#">About Us</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">Properties</a></li>
+          <li><a href="#hero">About Us</a></li>
+          <li><a href="#services">Services</a></li>
+          <!-- <li><a href="#">Properties</a></li> -->
         </ul>
         <a href="#contact-us" class="btn btn-primary">Contact Us</a>
       </nav>
@@ -45,6 +45,7 @@
 
 .container nav ul li {
   margin-right: 20px;
+  font-weight: bold;
 }
 
 .container nav ul li a {
