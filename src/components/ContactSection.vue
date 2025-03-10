@@ -4,24 +4,26 @@
       <!-- <h2>Get in Touch</h2> -->
       <div class="contact-grid">
         <form @submit.prevent="sendEmail">
-          <input type="text" autocomplete="on" id="name" placeholder="Your Name" required>
+          <input v-model="name" type="text" autocomplete="on" id="name" placeholder="Your Name" required>
           <span v-if="errors.name" class="error">{{ errors.name }}</span>
 
-          <input type="email" autocomplete="on" id="email" placeholder="Your Email" required>
+          <input v-model="email" type="email" autocomplete="on" id="email" placeholder="Your Email" required>
           <span v-if="errors.email" class="error">{{ errors.email }}</span>
 
-          <textarea id="message" placeholder="Your Message" required></textarea>
+          <textarea v-model="message" id="message" placeholder="Your Message" required></textarea>
           <span v-if="errors.message" class="error">{{ errors.message }}</span>
 
-          <button :disabled="loading" type="submit" class="btn btn-primary">Send Message</button>
+          <button :disabled="loading" type="submit" class="btn btn-primary">
+            {{ loading ? "Sending..." : "Send Email" }}
+          </button>
         </form>
 
         <!-- Success Message -->
         <p v-if="successMessage" class="success">{{ successMessage }}</p>
 
         <div class="contact-info">
-          <p>Email: <a href="mailto:info.realtyltd@yahoo.com">info.realtyltd@yahoo.com</a></p>
-          <p>Phone: +254 711 321 456</p>
+          <p>Email: <a href="mailto:info@canonicalrealty.com">info@canonicalrealty.com</a></p>
+          <p>Phone: +254 712 244 494</p>
         </div>
       </div>
     </div>
@@ -68,17 +70,19 @@ const sendEmail = async () => {
   loading.value = true;
 
   const templateParams = {
-    name: name.value,
-    email: email.value,
-    message: message.value,
+    user_name: name.value,
+    user_email: email.value,
+    user_message: message.value,
   };
 
   try {
     await emailjs.send(
-      "YOUR_SERVICE_ID",
-      "YOUR_TEMPLATE_ID",
+      'contact_service',
+      'contact_form',
       templateParams,
-      "YOUR_USER_ID"
+      {
+        publicKey: 'dspYnCBNU8O9RdF0j'
+      }
     );
 
     successMessage.value = "Your message has been sent successfully!";
