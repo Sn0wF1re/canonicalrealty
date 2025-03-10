@@ -42,15 +42,13 @@ const services = [
   padding: 60px 0;
 }
 
-.container {
-  h2, p {
-    max-width: 780px;
-    margin: 0 auto;
-  }
+.container h2, .container p {
+  max-width: 780px;
+  margin: 0 auto;
+}
 
-  h2 {
-    padding: 1px;
-  }
+.container h2 {
+  padding: 1px;
 }
 
 .services-grid {
