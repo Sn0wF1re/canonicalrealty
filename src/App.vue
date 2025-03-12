@@ -1,22 +1,24 @@
-<script setup>
-import NavigationSection from './components/NavigationSection.vue'
-import HeroSection from './components/HeroSection.vue'
-import ServicesSection from './components/ServicesSection.vue'
-import ContactSection from './components/ContactSection.vue'
-import FooterSection from './components/FooterSection.vue'
-</script>
-
 <template>
   <div>
     <NavigationSection />
     <HeroSection />
     <ServicesSection />
+    <CTASection />
     <ContactSection />
     <FooterSection />
   </div>
 </template>
 
-<style>
+<script setup>
+import NavigationSection from './components/NavigationSection.vue'
+import HeroSection from './components/HeroSection.vue'
+import ServicesSection from './components/ServicesSection.vue'
+import CTASection from './components/CTASection.vue'
+import ContactSection from './components/ContactSection.vue'
+import FooterSection from './components/FooterSection.vue'
+</script>
+
+<!-- <style>
   * {
     margin: 0;
     padding: 0;
@@ -24,34 +26,44 @@ import FooterSection from './components/FooterSection.vue'
   }
 
   body {
-    color: #edf5e1;
+    background-color: #effbef;
+    /* color: #edf5e1; */
+    color: #082108;
     /* margin: 2.5rem 6.25rem; */
     font-family: 'Instrument Sans', sans-serif;
   }
 
-  .hero, .services, .contact, .footer {
+  .hero {
+    margin: 2rem 6rem;
+    padding: 3rem 4rem;
+  }
+
+  .services, .contact, .footer {
+    margin: 2rem;
     padding: 3rem 4rem;
   }
   /* h1, h2 {
     color: #65ccb8;
     color: #f0f0f0;
     color: #000;
+    color: #082108;
   } */
 
   p {
     /* color: #5cdb95; */
-    color: #edf5e1;
+    /* color: #edf5e1; */
+    color: #2db42d;
   }
 
   button {
-    background-color: #4682b4;
-    color: #fff;
     border: 0;
+    border-radius: 1rem;
     padding: 0.5rem;
     cursor: pointer;
     width: 6rem;
+    font-weight: bold;
   }
-  .btn-white {
+  /* .btn-white {
   background-color: #fff;
   color: #000;
   border: 1px solid #fff;
@@ -60,11 +72,11 @@ import FooterSection from './components/FooterSection.vue'
   .btn-green {
     background-color: #00ff7f;
     color: #000;
-  }
+  } */
 
   @media (max-width: 850px) {
     .hero, .services, .contact, .footer {
     padding: 3rem 2rem;
   }
   }
-</style>
+</style> -->
