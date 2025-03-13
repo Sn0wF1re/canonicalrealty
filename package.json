@@ -10,7 +10,9 @@
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
-    "vue": "^3.3.4"
+    "vue": "^3.3.4",
+    "vue-gtag": "^2.1.0",
+    "vue-router": "^4.5.0"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.2.3",
