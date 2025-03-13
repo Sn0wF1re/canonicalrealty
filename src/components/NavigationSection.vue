@@ -8,7 +8,7 @@
         <ul>
           <li><a href="#hero">About Us</a></li>
           <li><a href="#services">Services</a></li>
-          <!-- <li><a href="#">Properties</a></li> -->
+          <li><a href="#">Properties</a></li>
         </ul>
         <a href="#contact-us" class="btn btn-primary">Contact Us</a>
       </nav>

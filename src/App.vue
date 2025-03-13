@@ -1,59 +1,6 @@
 <template>
-  <div>
-    <NavigationSection />
-    <HeroSection />
-    <ServicesSection />
-    <CTASection />
-    <ContactSection />
-    <FooterSection />
-  </div>
+  <router-view />
 </template>
-
-<script setup>
-import NavigationSection from './components/NavigationSection.vue'
-import HeroSection from './components/HeroSection.vue'
-import ServicesSection from './components/ServicesSection.vue'
-import CTASection from './components/CTASection.vue'
-import ContactSection from './components/ContactSection.vue'
-import FooterSection from './components/FooterSection.vue'
-import { onMounted } from 'vue'
-
-const addGoogleAnalytics = () => {
-  const script = document.createElement('script');
-  script.async = true;
-  script.src = `https://www.googletagmanager.com/gtag/js?id=G-WXVJNCHQ6S`;
-  document.head.appendChild(script)
-  window.dataLayer = window.dataLayer || [];
-  function gtag() {
-    window.dataLayer.push(arguments);
-  }
-  gtag('js', new Date());
-  gtag('config', 'G-WXVJNCHQ6S'); // Google Analytics ID
-},
-
-const addGoogleTagManager = () => {
-  const noscript = document.createElement('noscript');
-  noscript.innerHTML = `
-    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TBHJ3QLL" 
-            height="0" width="0" style="display:none;visibility:hidden"></iframe>
-  `;
-  document.body.appendChild(noscript)
-  const script = document.createElement('script');
-  script.innerHTML = `
-    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-TBHJ3QLL');
-  `;
-  document.head.appendChild(script);
-};
-
-onMounted(() => {
-  addGoogleAnalytics()
-  addGoogleTagManager()
-});
-</script>
 
 <!-- <style>
   * {
