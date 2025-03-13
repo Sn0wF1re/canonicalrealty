@@ -1,7 +1,11 @@
-// generate-sitemap.js
-const { SitemapStream, streamToPromise } = require('sitemap');
-const { createWriteStream } = require('fs');
-const { resolve } = require('path');
+import { SitemapStream, streamToPromise } from 'sitemap';
+import { createWriteStream } from 'fs';
+import { resolve, dirname } from 'path';
+import { fileURLToPath } from 'url';
+
+// Get the current directory name
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const sitemap = new SitemapStream({ hostname: 'https://canonicalrealty.com' });
 
@@ -9,7 +13,6 @@ const links = [
   { url: '/', changefreq: 'daily', priority: 1.0 },
   { url: '/services', changefreq: 'weekly', priority: 0.8 },
   { url: '/properties', changefreq: 'monthly', priority: 0.5 },
-  // Add more routes as needed
 ];
 
 links.forEach(link => sitemap.write(link));
