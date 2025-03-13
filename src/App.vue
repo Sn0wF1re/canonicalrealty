@@ -18,12 +18,6 @@ import ContactSection from './components/ContactSection.vue'
 import FooterSection from './components/FooterSection.vue'
 import { onMounted } from 'vue'
 
-onMounted(() => {
-  addGoogleAnalytics()
-  addGoogleTagManager()
-});
-
-
 const addGoogleAnalytics = () => {
   const script = document.createElement('script');
   script.async = true;
@@ -54,6 +48,11 @@ const addGoogleTagManager = () => {
   `;
   document.head.appendChild(script);
 };
+
+onMounted(() => {
+  addGoogleAnalytics()
+  addGoogleTagManager()
+});
 </script>
 
 <!-- <style>
